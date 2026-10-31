@@ -74,6 +74,16 @@ Prefer structured, purpose-limited records over permanently storing all raw chat
 
 These endpoints are design candidates. Use schema validation and avoid inventing endpoints until a user flow requires them.
 
+## BYOK and AI cost model (proposed)
+
+LifeOS aims to offer useful no-cost core features without requiring paid AI inference. Optional AI features should preferably use Bring Your Own Key (BYOK), where users connect a separately billed provider API account. Consumer chatbot subscriptions do not necessarily include API credits.
+
+Implement the AI integration behind a provider-neutral interface. Keep reflection, goal selection, action tracking and basic reviews functional without AI. Use simulated credentials and mocked responses during MVP development.
+
+For a hosted app, real API credentials must not be embedded in frontend code, local storage, URLs or logs. Before enabling BYOK, design secure server-side key handling or a provider-approved authorization mechanism, with user isolation, encryption, revocation and deletion. Explain charges and third-party processing before use.
+
+Any centrally funded AI requests require hard quotas, rate limits and a shutdown mechanism to prevent unexpected owner costs. Sponsored credits and local/on-device inference remain possible future enhancements.
+
 ## 8. AI integration
 
 Separate orchestration from the model SDK:
