@@ -59,6 +59,8 @@ If documents conflict, flag the discrepancy and suggest an explicit decision rat
 
 This repository may be used in an external AI-assisted development program. **Do not assume approval, billable hours, or permission to upload private data.** Review program terms before sharing development transcripts or exposing proprietary material. Keep examples synthetic and development logs free of secrets.
 
+The [24-task Development Roadmap](docs/DEVELOPMENT_ROADMAP.md) defines proposed, testable increments. Do not treat planned tasks as implemented or paid. Never load real-user reflections, private documents, or credentials into an externally shared evaluation session; use synthetic test data only.
+
 ## Initial implementation order (only when development is authorized)
 
 1. Clarify the MVP flow and acceptance tests.
