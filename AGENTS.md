@@ -35,6 +35,17 @@ If documents conflict, flag the discrepancy and suggest an explicit decision rat
 - Keep coaching language nonjudgmental; avoid manipulative engagement mechanics.
 - Do not treat subjective ratings as validated psychological measurements.
 
+## BYOK and cost safeguards
+
+- Preserve a useful non-AI pathway for Life Compass, goals, actions and reviews.
+- Use a provider-neutral AI adapter and simulated responses in automated tests.
+- Do not assume a consumer AI subscription includes access to its provider's paid API.
+- Do not implement live credential onboarding before secure per-user key handling is reviewed.
+- Never put API keys in client code, browser storage, URLs, repositories, or logs.
+- Explain provider billing and data processing before connecting real accounts.
+- Require enforced rate limits, quotas and a hard stop for any centrally billed AI requests.
+- Treat sponsored inference and local AI as future options, not guaranteed capabilities.
+
 ## Data security and privacy
 
 - Default to **synthetic personas and fictional development data**.
