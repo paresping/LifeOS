@@ -28,13 +28,19 @@ This document describes proposed work, not implemented functionality.
 7. **Mobile-first responsive interface**
    - Complete the core journey comfortably on a narrow phone screen and on desktop.
    - Support touch, keyboard navigation, readable text, and basic accessibility.
-8. **Foundational safeguards**
+8. **AI funding boundary and graceful fallback**
+   - Support the complete basic reflection, priorities, action and review journey without paid AI calls, using deterministic guidance or templates where necessary.
+   - Define a provider-neutral model interface, with mocked responses for development.
+   - Demonstrate an optional BYOK configuration flow with fictional credentials only; live credential onboarding is deferred until security review.
+   - Explain that consumer subscriptions may not provide API credit, and that users may incur provider charges.
+9. **Foundational safeguards**
    - Clear AI limitations, basic prompt-injection precautions, input validation, and no secrets in source control.
 
 ## Out of scope for this MVP
 
 - Clinical assessment, diagnosis, therapy, crisis counseling, or automated mental-health risk prediction.
 - Payment processing, subscriptions, or enterprise features.
+- Live third-party API key storage, sponsored credits and production billing infrastructure in the initial local MVP.
 - Complex multi-agent orchestration or autonomous actions in third-party services.
 - Comprehensive calendar, wearable, banking, or medical-record integrations.
 - Public community features or social matching.
@@ -68,6 +74,8 @@ All decisions remain provisional and should be recorded as they are made.
 - No real personal data is needed for a demonstration.
 - The user can review and change the AI-generated priority summary and proposed action.
 - Failure states (missing input, unavailable AI response) produce understandable feedback.
+- The core journey works without any paid model invocation, and AI suggestions are identified as optional.
+- No real API keys appear in source code, browser bundles, test fixtures, or shared logs.
 - The assistant avoids medical claims and clearly communicates its limitations.
 - Key user interactions are covered by automated tests.
 - A README explains setup, constraints, and current project status once software exists.
@@ -83,7 +91,8 @@ Before inviting real users, document consent, data retention, deletion/export me
 3. Backend and model integration.
 4. Action planning and review loop.
 5. Testing, privacy review, and documentation.
-6. Optional PWA installability and opt-in reminders after the basic experience is validated; assess cross-device synchronization separately.
+6. Secure BYOK integration and per-user cost notices only after a key-handling security review; sponsored capacity and local models can follow if justified.
+7. Optional PWA installability and opt-in reminders after the basic experience is validated; assess cross-device synchronization separately.
 
 ## Open questions
 
@@ -91,5 +100,7 @@ Before inviting real users, document consent, data retention, deletion/export me
 - What information, if any, may an external development or evaluation provider receive?
 - How can users verify, correct, and delete stored context?
 - How should the product be evaluated without making unsupported wellbeing claims?
+- Which secure BYOK authorization/key storage model is feasible for a hosted web app, and which AI providers permit it?
+- How will paid requests be capped, and what functionality remains available without AI?
 
 *Estimate discussed for the broader project: ~200 hours; this is a planning estimate, not a commitment or funded allocation.*
