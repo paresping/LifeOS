@@ -4,7 +4,7 @@
 
 ## 1. Architectural goals
 
-Build a small, comprehensible, testable personal-development web application. Prioritize user autonomy, safe handling of personal reflections, portability between language-model providers, and clear separation between deterministic application behavior and probabilistic AI responses.
+Build a small, comprehensible, testable, **mobile-first** personal-development web application that also works well on desktop. Prioritize user autonomy, safe handling of personal reflections, portability between language-model providers, and clear separation between deterministic application behavior and probabilistic AI responses.
 
 Avoid premature microservices, complex multi-agent orchestration, vector databases, or unnecessary third-party integrations.
 
@@ -12,7 +12,7 @@ Avoid premature microservices, complex multi-agent orchestration, vector databas
 
 ```mermaid
 flowchart TD
-    U[User] --> FE[React / TypeScript web client]
+    U[Phone or desktop user] --> FE[Responsive React / TypeScript web app]
     FE -->|HTTPS / JSON| API[Python / FastAPI application]
     API --> CORE[Domain services]
     CORE --> STORE[(Application storage)]
@@ -26,7 +26,8 @@ All model credentials remain server-side. Use synthetic test personas and avoid 
 
 | Layer | Candidate | Rationale |
 |---|---|---|
-| UI | React + TypeScript | Modular forms, guided experiences, and review screens |
+| UI | Mobile-first responsive React + TypeScript | One accessible web app for phones and desktop browsers |
+| Distribution | Web first; installable PWA in a later milestone | Single codebase, optional home-screen install without separate native apps |
 | Backend | Python + FastAPI | Explicit contracts, validation, testable domain logic |
 | Data | PostgreSQL (later stage) | Relational data, access control, migrations |
 | Prototype persistence | Minimal local test storage | Avoid infrastructure before persistence requirements are validated |
@@ -36,7 +37,17 @@ All model credentials remain server-side. Use synthetic test personas and avoid 
 
 These are proposals, not commitments. Select versions and libraries during implementation.
 
-## 4. Logical modules
+## 4. Cross-device experience and PWA strategy
+
+**Decision:** Design mobile-first and ship one responsive website first. Prioritize brief check-ins, readable coaching conversations, accessible touch targets, and low-friction navigation on phones. Desktop layouts should support longer reflection, side-by-side review, and planning without introducing separate business logic.
+
+**PWA phase (after the core MVP):** Evaluate a web app manifest, icons, service worker, installability, and optional reminders. Push notification capability and installation behavior vary across browsers and operating systems; do not promise universal delivery. Notifications require explicit opt-in and granular controls. Cache only appropriate static assets by default; do not cache sensitive reflections or AI conversations without a documented security design.
+
+**Future native option:** Build separate iOS/Android apps only if validated needs (e.g. platform integration, reliability, accessibility, distribution) justify the cost. Both clients should share the same backend contracts.
+
+**Cross-device continuity:** Synchronizing personal records requires authenticated user accounts, secure authorization, consent and retention/deletion controls. The initial local, synthetic-data MVP is **not** assumed to support cross-device sync. This is a later milestone, not an implicit capability of a PWA.
+
+## 5. Logical modules
 
 - **Life Compass:** domain reflections, optional subjective ratings, user-edited summaries.
 - **Life Strategy:** user-selected priorities, goals, and manageable next actions.
@@ -46,7 +57,7 @@ These are proposals, not commitments. Select versions and libraries during imple
 - **AI Guidance:** structured prompts, grounded summaries, uncertainty handling, and output validation.
 - **User Data Controls:** consent choices and inspect/edit/delete/export capabilities before supporting real personal data.
 
-## 5. Data boundaries and proposed entities
+## 6. Data boundaries and proposed entities
 
 Possible entities: `User`, `LifeDomainReflection`, `ValueStatement`, `Priority`, `ActionStep`, `Review`, and `MemoryItem`.
 
@@ -54,7 +65,7 @@ Prefer structured, purpose-limited records over permanently storing all raw chat
 
 **MVP note:** Authentication and durable user storage may be deferred when testing with synthetic profiles in a local environment. Do not invite real users to enter private information until the privacy implementation gate in `MVP_SCOPE.md` is satisfied.
 
-## 6. Illustrative API contracts (not implemented)
+## 7. Illustrative API contracts (not implemented)
 
 - `POST /api/v1/compass/reflections` — validate and summarize a fictional/test reflection.
 - `POST /api/v1/priorities` — record a user-selected priority.
@@ -63,7 +74,7 @@ Prefer structured, purpose-limited records over permanently storing all raw chat
 
 These endpoints are design candidates. Use schema validation and avoid inventing endpoints until a user flow requires them.
 
-## 7. AI integration
+## 8. AI integration
 
 Separate orchestration from the model SDK:
 
@@ -83,7 +94,7 @@ Application flow
 - Do not infer diagnoses or claim therapeutic efficacy.
 - Escalate apparent urgent safety concerns toward appropriate human/emergency support; do not portray the AI as a crisis responder.
 
-## 8. Privacy and security requirements
+## 9. Privacy and security requirements
 
 Before real-user deployment:
 - Document data flows, lawful basis and notices where applicable, consent choices, processor arrangements, and retention periods.
@@ -93,22 +104,23 @@ Before real-user deployment:
 - Run threat modeling and security tests covering prompt injection, broken access control, exposed credentials, and sensitive-data leakage.
 - Assess GDPR obligations and whether a DPIA is required before handling real sensitive information.
 
-## 9. Deployment and environments
+## 10. Deployment and environments
 
 First milestone: local-only development with fictional data. Later, use separate development and production configurations, repeatable migrations, environment-based secrets, secure CI checks, backups, and documented recovery procedures.
 
 Never commit `.env`, API keys, private exports, database dumps, or identifying test data.
 
-## 10. Testing and quality gates
+## 11. Testing and quality gates
 
 - Unit-test deterministic domain logic and validation.
 - Mock LLM responses in automated tests; maintain reproducible fixtures.
 - Test the full Compass -> Priority -> Suggested Action -> Review journey.
+- Test responsive layouts at common mobile and desktop viewport sizes, touch and keyboard interaction, and basic accessibility.
 - Test refusal/correction of AI suggestions and provider outages.
 - Add privacy, authorization, and security tests before any real-user rollout.
 - Record architecture decisions as short ADRs only when important decisions are made.
 
-## 11. Open decisions
+## 12. Open decisions
 
 1. What is the minimum viable persistence model?
 2. Is account creation necessary for MVP testing?
