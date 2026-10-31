@@ -48,6 +48,12 @@ A useful non-AI experience (reflection, goals, action tracking, review) should r
 
 See [Product Vision](docs/PRODUCT_VISION.md), [MVP Scope](docs/MVP_SCOPE.md), and [Architecture](docs/ARCHITECTURE.md) for privacy and implementation constraints.
 
+## Alignerr evaluation readiness
+
+For any potential Alignerr-funded development, use synthetic personas and fictional data exclusively; no real-user onboarding, private journals, health records, or real API keys may enter development sessions, demos, logs, or shared transcripts. Confirm project eligibility and data-sharing terms with Alignerr before starting paid work.
+
+See the [Development Roadmap](docs/DEVELOPMENT_ROADMAP.md) for 24 proposed tasks and [Claude Code instructions](CLAUDE.md) for the agent workflow.
+
 ## Development
 
 Potential stack: React frontend, Python/FastAPI backend, and PostgreSQL for persistence, subject to change during prototyping.
