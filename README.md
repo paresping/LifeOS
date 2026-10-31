@@ -36,7 +36,9 @@ LifeOS may involve sensitive personal reflections. The project will use fictiona
 
 The planned LifeOS interface uses a calm, accessible visual language across mobile and desktop. The mobile-first design emphasizes short daily check-ins, reflection, and manageable next steps; the desktop layout offers more space for the Life Compass, longer-term priorities, and AI-guided planning.
 
-A visual concept mockup has been prepared for the project. It is **concept design only — not yet implemented**. The image will be added under `docs/images/lifeos-concept.png` when uploaded.
+![LifeOS mobile and desktop UI concept](docs/images/ifeos-concept.png)
+
+*Concept design only — not yet implemented.*
 
 ## Development
 
