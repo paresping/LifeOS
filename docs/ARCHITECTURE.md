@@ -130,6 +130,10 @@ Never commit `.env`, API keys, private exports, database dumps, or identifying t
 - Add privacy, authorization, and security tests before any real-user rollout.
 - Record architecture decisions as short ADRs only when important decisions are made.
 
+## External evaluation data boundary
+
+For any potential Alignerr-funded development, use synthetic personas and fictional data exclusively; no real-user onboarding, private journals, health records, or real API keys may enter development sessions, demos, logs, or shared transcripts. Confirm project eligibility and data-sharing terms with Alignerr before starting paid work. Model prompts and fixtures must be fictional. Real account credentials and actual personal information must never be used to test the proposed integration.
+
 ## 12. Open decisions
 
 1. What is the minimum viable persistence model?
