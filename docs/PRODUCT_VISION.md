@@ -22,6 +22,18 @@ LifeOS should help a user:
 3. Translate that priority into a realistic, achievable next step.
 4. Reflect on what happened and adapt over time.
 
+## Flexible engagement across life stages
+
+**LifeOS should help people find their direction, build a meaningful life, and continue growing at their own pace — for as long as they find it valuable.**
+
+LifeOS supports three complementary modes of use:
+
+1. **Find Your Direction:** For people who feel lost or uncertain and want to explore values, needs, and possible directions.
+2. **Build Your Life:** For people with a clearer direction who want practical plans, manageable actions, and thoughtful follow-through.
+3. **Grow With Life:** For people who want occasional or ongoing reflection as their circumstances and priorities evolve.
+
+These are **not mandatory stages, levels, or a fixed progression**. Users may move between modes, pause, stop, or return after months or years. LifeOS must not pressure people into daily use or present disengagement as failure. Any saved history used after returning should remain under the user's control and subject to explicit retention and deletion choices.
+
 ## Product pillars
 
 ### Life Compass
@@ -42,6 +54,7 @@ Help the user recognize patterns, revisit priorities, and acknowledge progress w
 ## Design principles
 
 - **User autonomy first:** The user sets priorities; AI offers options, not directives.
+- **Independence over dependency:** Help users strengthen their own judgment and capabilities; never optimize for unnecessary time spent in the app.
 - **Small, practical steps:** Reduce overwhelm; focus on actions that fit real life.
 - **Nonjudgmental tone:** Avoid shame, manipulation, or pressure to be productive.
 - **Human connection matters:** Encourage appropriate offline relationships and support.
@@ -52,7 +65,7 @@ Help the user recognize patterns, revisit priorities, and acknowledge progress w
 
 ## Success criteria
 
-Early product success means a user can describe a self-chosen priority, identify a realistic next action, and feel more able to act — not that they spend more time in the app. Validate these assumptions through voluntary user feedback before making effectiveness claims.
+Early product success means a user can describe a self-chosen priority, identify a realistic next action, and feel more able to act — not that they spend more time in the app. Over time, assess whether users report greater clarity, agency, and useful real-world progress, including when they choose to use LifeOS less often or stop using it. Validate these assumptions through voluntary user feedback before making effectiveness claims.
 
 ## Non-goals
 
