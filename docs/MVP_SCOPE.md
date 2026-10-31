@@ -6,6 +6,8 @@ Validate one central experience: **a person who feels uncertain about their dire
 
 This document describes proposed work, not implemented functionality.
 
+**Delivery decision:** The first release is a **mobile-first responsive website** usable on phone and desktop. A home-screen-installable Progressive Web App (PWA) is a subsequent enhancement; separate iOS and Android native apps are outside the MVP.
+
 ## In scope — first release
 
 1. **Simple onboarding and boundaries**
@@ -23,7 +25,10 @@ This document describes proposed work, not implemented functionality.
    - Produce one concrete next step with a description and an optional target date.
 6. **Basic review**
    - Let the user mark an action as tried, skipped, or revised and record a short reflection.
-7. **Foundational safeguards**
+7. **Mobile-first responsive interface**
+   - Complete the core journey comfortably on a narrow phone screen and on desktop.
+   - Support touch, keyboard navigation, readable text, and basic accessibility.
+8. **Foundational safeguards**
    - Clear AI limitations, basic prompt-injection precautions, input validation, and no secrets in source control.
 
 ## Out of scope for this MVP
@@ -33,6 +38,8 @@ This document describes proposed work, not implemented functionality.
 - Complex multi-agent orchestration or autonomous actions in third-party services.
 - Comprehensive calendar, wearable, banking, or medical-record integrations.
 - Public community features or social matching.
+- Native iOS or Android apps, app-store publication, and guaranteed push notifications.
+- Cross-device account synchronization until authentication and privacy controls are implemented.
 - A claim that the system improves mental health or life outcomes without evidence.
 
 ## Proposed user journey
@@ -46,7 +53,7 @@ This document describes proposed work, not implemented functionality.
 
 ## Candidate technical architecture
 
-- **Frontend:** React / TypeScript
+- **Frontend:** Mobile-first responsive React / TypeScript (one codebase for browser use on phone and desktop); optional PWA capabilities in a later phase.
 - **Backend:** Python / FastAPI
 - **Storage:** PostgreSQL in a later iteration; local or minimal development storage may be sufficient for an initial prototype.
 - **AI layer:** An interchangeable LLM adapter with explicit prompts, safety checks, and test fixtures.
@@ -57,6 +64,7 @@ All decisions remain provisional and should be recorded as they are made.
 ## Acceptance criteria
 
 - A tester can complete the full journey without manual intervention.
+- The journey is usable on narrow mobile and standard desktop screens, including keyboard and touch interaction.
 - No real personal data is needed for a demonstration.
 - The user can review and change the AI-generated priority summary and proposed action.
 - Failure states (missing input, unavailable AI response) produce understandable feedback.
@@ -71,10 +79,11 @@ Before inviting real users, document consent, data retention, deletion/export me
 ## Proposed milestones
 
 1. Product requirements and conversation examples.
-2. Clickable flow / basic interface.
+2. Mobile-first clickable flow and responsive web interface.
 3. Backend and model integration.
 4. Action planning and review loop.
 5. Testing, privacy review, and documentation.
+6. Optional PWA installability and opt-in reminders after the basic experience is validated; assess cross-device synchronization separately.
 
 ## Open questions
 
