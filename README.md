@@ -32,6 +32,12 @@ See [MVP Scope](docs/MVP_SCOPE.md) for the proposed scope and acceptance criteri
 
 LifeOS may involve sensitive personal reflections. The project will use fictional or synthetic data during early development, minimize collection of personal information, and prioritize user control over stored information. LifeOS is not a mental-health diagnostic or treatment service and should not present itself as a substitute for qualified professionals.
 
+## UI concept
+
+The planned LifeOS interface uses a calm, accessible visual language across mobile and desktop. The mobile-first design emphasizes short daily check-ins, reflection, and manageable next steps; the desktop layout offers more space for the Life Compass, longer-term priorities, and AI-guided planning.
+
+A visual concept mockup has been prepared for the project. It is **concept design only — not yet implemented**. The image will be added under `docs/images/lifeos-concept.png` when uploaded.
+
 ## Development
 
 Potential stack: React frontend, Python/FastAPI backend, and PostgreSQL for persistence, subject to change during prototyping.
