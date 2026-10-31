@@ -80,6 +80,10 @@ All decisions remain provisional and should be recorded as they are made.
 - Key user interactions are covered by automated tests.
 - A README explains setup, constraints, and current project status once software exists.
 
+## External development / evaluation boundary
+
+For any potential Alignerr-funded development, use synthetic personas and fictional data exclusively; no real-user onboarding, private journals, health records, or real API keys may enter development sessions, demos, logs, or shared transcripts. Confirm project eligibility and data-sharing terms with Alignerr before starting paid work. The future production product may handle sensitive reflections, but the prototype must not collect them from real people. The published roadmap is not authorization to begin work or a guarantee of compensation.
+
 ## Privacy implementation gate
 
 Before inviting real users, document consent, data retention, deletion/export mechanisms, access controls, storage security, logging policy, and applicable regulatory obligations. Use synthetic profiles for demos and any externally shared development traces until these are reviewed.
