@@ -40,6 +40,14 @@ The planned LifeOS interface uses a calm, accessible visual language across mobi
 
 *Concept design only — not yet implemented.*
 
+## Access and AI funding strategy (proposed)
+
+LifeOS aims to keep its core features free to use without requiring the project owner to subsidize unlimited AI usage. The preferred long-term model is **Bring Your Own Key (BYOK)**: users may connect a supported AI provider's separately billed API account, subject to provider terms and usage limits. A regular consumer AI subscription does **not** necessarily include API usage.
+
+A useful non-AI experience (reflection, goals, action tracking, review) should remain available without connecting a paid AI service. Future options include sponsored AI allowances or locally hosted/on-device models where practical. These options are proposals, not MVP commitments.
+
+See [Product Vision](docs/PRODUCT_VISION.md), [MVP Scope](docs/MVP_SCOPE.md), and [Architecture](docs/ARCHITECTURE.md) for privacy and implementation constraints.
+
 ## Development
 
 Potential stack: React frontend, Python/FastAPI backend, and PostgreSQL for persistence, subject to change during prototyping.
