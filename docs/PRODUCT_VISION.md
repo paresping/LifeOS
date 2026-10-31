@@ -51,6 +51,12 @@ Maintain context with explicit user visibility, correction, export, and deletion
 ### Life Review
 Help the user recognize patterns, revisit priorities, and acknowledge progress without reducing life to a score.
 
+## Accessibility and sustainable funding
+
+LifeOS aims to be **free to access**, including meaningful non-AI functionality. AI assistance may be funded through a user-provided API account (Bring Your Own Key, or BYOK), donated/sponsored allowances, or optional local models where feasible. Using a paid AI API is optional; the application should clearly explain any third-party costs before users opt in. Consumer AI subscriptions do not automatically include third-party API access.
+
+The goal is broad reach without requiring the creator to personally subsidize ongoing inference or hosting. Establish enforceable usage budgets and funding before enabling centrally billed AI requests. Never monetize private reflections or grant sponsors access to user conversations.
+
 ## Design principles
 
 - **User autonomy first:** The user sets priorities; AI offers options, not directives.
